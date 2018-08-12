@@ -1,0 +1,34 @@
+<h1>Additional access</h1>
+<form action="/admin" method="POST" class="form-horizontal">
+	<div class="form-group">
+	    <label for="inputLogin">Login</label>
+	    <input type="text" name='username' class="form-control" id="inputLogin" placeholder="Login" autofocus>
+	  </div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="adminpassword" />
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<% if @logfile %>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Visitor</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% cnt = 1 %>
+		<% @logfile.each do |line| %>
+			<tr>
+				<th scope=row><%= cnt %></th>
+	  			<td><%= line %></td>
+	  			<% cnt += 1 %>
+	  		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>
