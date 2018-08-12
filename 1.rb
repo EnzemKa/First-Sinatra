@@ -59,15 +59,23 @@ post '/checkin' do
 	@date_time = params[:date_time]
 
 	@title = 'Thank you!'
-	@message = "Dear #{@username}, we'll be waiting at #{@date_time}"
+	@message = "Dear #{@username}, we'll be waiting you at #{@date_time}"
 	
 	f = File.open 'users.txt', 'a'
 	f.write "User: #{@username},\tPhone: #{@userphone},\tDate and time: #{@date_time}\n"
 	f.close
 
-	f = File.open '/public/users.txt', 'a'
-	f.write "User: #{@username},\tPhone: #{@userphone},\tDate and time: #{@date_time}\n"
-	f.close
-
 	erb :message
+end
+
+### About ###
+
+get '/about' do 					
+  erb :about
+end
+
+### Contacts ###
+
+get '/contacts' do 					
+  erb :contacts
 end

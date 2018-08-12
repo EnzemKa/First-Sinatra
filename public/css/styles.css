@@ -1,6 +1,45 @@
-body {
+.bodyset {
 	padding-top: 70px;
 }
 .glyphicon {
 	margin-right: 10px;
+}
+
+.admintable {
+	margin-top: 20px;
+	margin-left: -15px;
+}
+
+#myCarousel {
+	margin-top: -20px;
+}
+.reserved {
+	text-align: center;
+}
+.reserved thead {
+	font-weight: 600;
+}
+.reserved tbody tr td,
+.reserved thead tr td {
+	border: none;
+}
+
+.reserved tbody tr td a {
+	color: #333;
+	/*padding: 15px;*/
+    /*margin-bottom: 10px;*/
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 85px;
+    height: 45px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.available:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+.notavailable:hover {
+	cursor: not-allowed;
+	text-decoration: none;
 }

@@ -56,16 +56,12 @@
       </div>
     </nav>
 
-    <div class="container">
-
-      <div>
+      <div class="bodyset">
         <%if @error then %>
             <div class="alert alert-error"><%=@error%></div>
         <% end %>
         <%= yield %>
       </div>
-
-    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
