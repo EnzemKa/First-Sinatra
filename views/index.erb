@@ -3,10 +3,13 @@
 
 <div class="alert alert-info" role="alert">We are open</div>
 
+<% t = Time.now %>
+
+
 <table class="table reserved">
 	<thead>
 		<tr>
-			<td colspan = "11">Monday</td>
+			<td colspan = "11"><%= t.strftime("%^A, %d %B") %></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,7 +29,7 @@
 	</tbody>
 	<thead>
 		<tr>
-			<td colspan = "11">Tuesday</td>
+			<td colspan = "11"><%= (t+86400).strftime("%^A, %d %B") %></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -46,7 +49,7 @@
 	</tbody>
 	<thead>
 		<tr>
-			<td colspan = "11">Wednesday</td>
+			<td colspan = "11"><%= (t+2*86400).strftime("%^A, %d %B") %></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -66,7 +69,7 @@
 	</tbody>
 	<thead>
 		<tr>
-			<td colspan = "11">Thursday</td>
+			<td colspan = "11"><%= (t+3*86400).strftime("%^A, %d %B") %></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -86,7 +89,7 @@
 	</tbody>
 	<thead>
 		<tr>
-			<td colspan = "11">Friday</td>
+			<td colspan = "11"><%= (t+4*86400).strftime("%^A, %d %B") %></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -106,7 +109,7 @@
 	</tbody>
 	<thead>
 		<tr>
-			<td colspan = "11">Saturday</td>
+			<td colspan = "11"><%= (t+5*86400).strftime("%^A, %d %B") %></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -126,7 +129,7 @@
 	</tbody>
 	<thead>
 		<tr>
-			<td colspan = "11">Sunday</td>
+			<td colspan = "11"><%= (t+6*86400).strftime("%^A, %d %B") %></td>
 		</tr>
 	</thead>
 	<tbody>
