@@ -57,18 +57,32 @@ end
 post '/checkin' do
 	@username = params[:username]
 	@userphone = params[:userphone]
-	@date_time = params[:date_time]
+	@datetime = params[:datetime]
 	@master = params[:master]
 	@colorpicker = params[:colorpicker]
 
+	hh = {
+		:username => 'Enter your name',
+		:phone => 'Enter your phone',
+		:datetime => 'Please, enter date and time you come'
+	}
+
+	hh.each do |key, value|
+		if params[key] == ''
+			@error = value
+			return erb :checkin
+		end
+	end
+
 	@title = 'Thank you!'
-	@message = "Dear #{@username}, #{@master} will be waiting you at #{@date_time}"
+	@message = "Dear #{@username}, #{@master} will be waiting you at #{@datetime}"
 	
 	f = File.open 'users.txt', 'a'
-	f.write "User: #{@username},\tPhone: #{@userphone},\tMaster: #{@master},\tDate and time: #{@date_time},\tColor: #{@colorpicker}\n"
+	f.write "User: #{@username},\tPhone: #{@userphone},\tMaster: #{@master},\tDate and time: #{@datetime},\tColor: #{@colorpicker}\n"
 	f.close
 
 	erb :message
+
 end
 
 ### About ###

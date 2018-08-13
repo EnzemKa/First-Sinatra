@@ -4,43 +4,43 @@
 
 	<div class="form-group">
 			<label for="exampleInputName">Name:</label>
-			<input type="text" class="form-control" id="exampleInputName" placeholder="Your name" name="username" />
+			<input type="text" class="form-control" id="exampleInputName" placeholder="Your name" name="username" value="<%= @username %>" />
 	</div>
 
 	<div class="form-group">
 			<label for="exampleInputPhone">Phone:</label>
-			<input type="tel" class="form-control" id="exampleInputPhone" placeholder="Your phone" name="userphone" />
+			<input type="tel" class="form-control" id="exampleInputPhone" placeholder="Your phone" name="userphone" value="<%= @userphone %>" />
 	</div>
 
 	<div class="form-group">
 			<label for="exampleInputDateTime">Date and time you'll come:</label>
-			<input type="datetime-local" class="form-control" id="exampleInputDateTime" placeholder="Your name" name="date_time" />
+			<input type="datetime-local" class="form-control" id="exampleInputDateTime" placeholder="Your name" name="datetime" value="<%= @datetime %>"  />
 	</div>
 
 	<div class="form-group">
 		<label for="exampleInputMaster">Choose your barber:</label>
-		<select name="master" id="exampleInputMaster">
-		  <option>Mr. Brown</option>
-		  <option>Mr. Green</option>
-		  <option>Mr. White</option>
+		<select class="form-control" name="master" id="exampleInputMaster" >
+		  <option value="Mr. Brown" <%= 'selected' if @master == 'Mr. Brown'  %> >Mr. Brown</option>
+		  <option value="Mr. Green" <%= 'selected' if @master == 'Mr. Green' %> >Mr. Green</option>
+		  <option value="Mr. White" <%= 'selected' if @master == 'Mr. White' %> >Mr. White</option>
 		</select>
 	</div>
 
 	<div class="form-group">
 		<label for="exampleInputColor">Available color:</label>
 		<select id="exampleInputColor"  class="form-control" name="colorpicker">
-		  <option value="#7bd148">Green</option>
-		  <option value="#5484ed">Bold blue</option>
-		  <option value="#a4bdfc">Blue</option>
-		  <option value="#46d6db">Turquoise</option>
-		  <option value="#7ae7bf">Light green</option>
-		  <option value="#51b749">Bold green</option>
-		  <option value="#fbd75b">Yellow</option>
-		  <option value="#ffb878">Orange</option>
-		  <option value="#ff887c">Red</option>
-		  <option value="#dc2127">Bold red</option>
-		  <option value="#dbadff">Purple</option>
-		  <option value="#e1e1e1">Gray</option>
+		  <option value="#7bd148" <%= 'selected' if @colorpicker == '#7bd148'  %> >Green</option>
+		  <option value="#5484ed" <%= 'selected' if @colorpicker == '#5484ed'  %> >Bold blue</option>
+		  <option value="#a4bdfc" <%= 'selected' if @colorpicker == '#a4bdfc'  %> >Blue</option>
+		  <option value="#46d6db" <%= 'selected' if @colorpicker == '#46d6db'  %> >Turquoise</option>
+		  <option value="#7ae7bf" <%= 'selected' if @colorpicker == '#7ae7bf'  %> >Light green</option>
+		  <option value="#51b749" <%= 'selected' if @colorpicker == '#51b749'  %> >Bold green</option>
+		  <option value="#fbd75b" <%= 'selected' if @colorpicker == '#fbd75b'  %> >Yellow</option>
+		  <option value="#ffb878" <%= 'selected' if @colorpicker == '#ffb878'  %> >Orange</option>
+		  <option value="#ff887c" <%= 'selected' if @colorpicker == '#ff887c'  %> >Red</option>
+		  <option value="#dc2127" <%= 'selected' if @colorpicker == '#dc2127'  %> >Bold red</option>
+		  <option value="#dbadff" <%= 'selected' if @colorpicker == '#dbadff'  %> >Purple</option>
+		  <option value="#e1e1e1" <%= 'selected' if @colorpicker == '#e1e1e1'  %> >Gray</option>
 		</select>
 	</div>
 
