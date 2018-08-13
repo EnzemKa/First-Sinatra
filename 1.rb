@@ -32,6 +32,7 @@ post '/admin' do
 	if @adminpassword == 'qwertyui'
 		session[:identity] = @username
 		@logfile = File.readlines('users.txt')
+		@logfile2 = File.readlines('contacts.txt')
 		erb :admin
 	elsif @adminpassword == 'admin'
 		@error = 'Haha, you are cheater! Wrong login or password'
@@ -79,4 +80,18 @@ end
 
 get '/contacts' do 					
   erb :contacts
+end
+
+post '/contacts' do
+	@email = params[:email]
+	@comment = params[:comment]
+
+	@title = 'Thank you!'
+	@message = "We'll reply soon"
+	
+	f = File.open 'contacts.txt', 'a'
+	f.write "Email - #{@email}:\nMessage: #{@comment}\n\n"
+	f.close
+
+	erb :message
 end
