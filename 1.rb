@@ -63,15 +63,21 @@ post '/checkin' do
 
 	hh = {
 		:username => 'Enter your name',
-		:phone => 'Enter your phone',
+		:userphone => 'Enter your phone',
 		:datetime => 'Please, enter date and time you come'
 	}
 
-	hh.each do |key, value|
-		if params[key] == ''
-			@error = value
-			return erb :checkin
-		end
+	#hh.each do |key, value|
+	#	if params[key] == ''
+	#		@error = value
+	#		return erb :checkin
+	#	end
+	#end
+
+	@error = hh.select {|key,_| params[key] == ''}.values.join(', ')
+
+	if @error != ''
+		return erb :checkin
 	end
 
 	@title = 'Thank you!'
