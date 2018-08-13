@@ -59,12 +59,13 @@ post '/checkin' do
 	@userphone = params[:userphone]
 	@date_time = params[:date_time]
 	@master = params[:master]
+	@colorpicker = params[:colorpicker]
 
 	@title = 'Thank you!'
 	@message = "Dear #{@username}, #{@master} will be waiting you at #{@date_time}"
 	
 	f = File.open 'users.txt', 'a'
-	f.write "User: #{@username},\tPhone: #{@userphone},\tMaster: #{@master},\tDate and time: #{@date_time}\n"
+	f.write "User: #{@username},\tPhone: #{@userphone},\tMaster: #{@master},\tDate and time: #{@date_time},\tColor: #{@colorpicker}\n"
 	f.close
 
 	erb :message
